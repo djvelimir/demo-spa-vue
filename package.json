@@ -1,15 +1,19 @@
 {
   "name": "demo-spa-vue",
   "version": "0.1.0",
+  "homepage": "https://djvelimir.github.io/demo-spa-vue",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy" : "yarn run build",
+    "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "gh-pages": "^4.0.0",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
