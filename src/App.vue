@@ -1,30 +1,20 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <HeaderView></HeaderView>
   <router-view/>
+  <FooterView></FooterView>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import HeaderView from '@/views/HeaderView.vue';
+import FooterView from '@/views/FooterView.vue';
+
+@Options({
+  components: {
+    HeaderView,
+    FooterView
+  },
+})
+export default class App extends Vue {
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+</script>
