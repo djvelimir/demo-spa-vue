@@ -8,16 +8,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'home',
+    meta: { title: 'Home' },
     component: HomeView
   },
   {
     path: '/about',
     name: 'about',
+    meta: { title: 'About' },
     component: AboutView
   },
   {
     path: '/contact',
     name: 'contact',
+    meta: { title: 'Contact' },
     component: ContactView
   },
   {
@@ -26,6 +29,8 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/:pathMatch(.*)',
+    name: 'pageNotFound',
+    meta: { title: 'Page Not Found' },
     component: PageNotFoundView
   }
 ]
@@ -34,5 +39,11 @@ const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
+
+const DEFAULT_TITLE = 'demo-spa-vue';
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title as string || DEFAULT_TITLE;
+  next();
+});
 
 export default router
