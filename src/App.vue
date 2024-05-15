@@ -1,19 +1,19 @@
 <template>
-  <HeaderView></HeaderView>
+  <HeaderComponent></HeaderComponent>
   <router-view/>
-  <FooterView></FooterView>
+  <FooterComponent></FooterComponent>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HeaderView from '@/views/HeaderView.vue';
-import FooterView from '@/views/FooterView.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 import './App.css'
 
 @Options({
   components: {
-    HeaderView,
-    FooterView
+    HeaderComponent,
+    FooterComponent
   },
 })
 export default class App extends Vue {
