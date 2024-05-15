@@ -8,6 +8,7 @@
 import { Options, Vue } from 'vue-class-component';
 import HeaderView from '@/views/HeaderView.vue';
 import FooterView from '@/views/FooterView.vue';
+import './App.css'
 
 @Options({
   components: {
