@@ -17,9 +17,9 @@
 </template>
 
 <style scoped lang="scss">
+@reference 'tailwindcss';
+
 .active {
-    border-bottom: 2px solid rgb(34 197 94 / var(--tw-bg-opacity));
-    transform: scale(1.1);
-    transition: border-bottom 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  @apply text-white scale-x-110 underline underline-offset-4 decoration-2 transition;
 }
 </style>
